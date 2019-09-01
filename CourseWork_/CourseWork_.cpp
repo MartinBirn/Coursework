@@ -603,16 +603,12 @@ int main()
 		{
 			FILE* stream;
 
-			char way[100] = "C:/..."; //Путь к папке, содержащей матрицу
+			char pathToFile[100];
 
-			char filename[50];
+			cout << "Введите путь к файлу, содержащего матрицу, и его название (к примеру C:\matrix.txt)";
+			cin >> pathToFile;
 
-			cout << "Введите названия файла содержащего матрицу (***.txt): ";
-			cin >> filename;
-
-			strcat_s(way, 50, filename);
-
-			fopen_s(&stream, way, "r");
+			fopen_s(&stream, pathToFile, "r");
 
 			if (stream == NULL)
 			{
